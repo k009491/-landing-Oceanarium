@@ -7,6 +7,22 @@ $(document).ready(function(){
     });
 //end Slider
 
+//Main-menu
+    $('.main-menu__button').click(function(){
+        $(this).children('.fa').toggleClass('fa-bars').toggleClass('fa-times');
+        $('.main-menu__list').slideToggle();
+    });
+    $(window).on('load resize', function(){
+        if($(window).outerWidth() >= 800 ){
+            $('.main-menu__list').css('display','flex');
+        }
+        else {
+            $('.main-menu__button .fa').addClass('fa-bars').removeClass('fa-times');
+            $('.main-menu__list').css('display','none');
+        }
+    });
+//end Main-menu
+
 //Events filter
     $('.future-events__item').click(function(){
         $('.future-events__item').removeClass('future-events__item_active');
@@ -23,9 +39,11 @@ $(document).ready(function(){
         $('.future-event').css('display', 'block');
     });
 //end Events filter
+
 //Calendar
     $('.calendar-slider').slick({});
 //end Calendar
+
 //Gallery
     $(window).on('load resize', function(){
         var currentWidth = $('.gallery_item').outerWidth();

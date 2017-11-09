@@ -107,6 +107,9 @@ html {
 .main-menu {
     display: block;
 }
+.main-menu__button {
+    display: none;
+}
 .main-menu__list {
     display: flex;
     padding: 0;
@@ -166,6 +169,63 @@ html {
     .main-menu__link {
         padding: 0 10px;
         line-height: 1;
+    }
+}
+@media screen and (max-width: 800px) {
+    .header {
+        flex-direction: row;
+    }
+    .header__logotype {
+        z-index: 102;
+    }
+    .header__main-menu {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 0;
+        z-index: 101;
+    }
+    .main-menu__button {
+        display: block;
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+        border: 2px solid #00c0ff;
+        border-radius: 50%;
+        line-height: 37px;
+        color: #00c0ff;
+        cursor: pointer;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        right: 30px;
+
+    }
+    .main-menu__list {
+        display: none;
+        width: 100%;
+        padding: 0 0 15px;
+        text-align: center;
+        position: absolute;
+        top: 58px;
+        left: 0;
+        background-color: #f2f2f2;
+    }
+    .main-menu__item {
+        display: block;
+    }
+    .main-menu__link {
+        line-height: 2.5;
+    }
+    .main-menu__link:hover:before,
+    .main-menu__link:hover:after {
+        height: 2px;
+        width: 100%;
+    }
+    .main-menu__link:hover:after {
+        top: auto;
+        bottom: 0;
     }
 }
 /*end Header*/
