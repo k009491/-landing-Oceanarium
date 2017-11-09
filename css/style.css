@@ -118,17 +118,34 @@ html {
 .main-menu__link {
     display: block;
     padding: 0 18px;
-    border: 2px solid transparent;
     font-weight: 300;
     font-size: 1.125rem;
     line-height: 70px;
     color: #272727;
     text-decoration: none;
     text-transform: uppercase;
+    position: relative;
 }
-.main-menu__link:hover {
-    border-left-color: #272727;
-    border-right-color: #272727;
+.main-menu__link:before,
+.main-menu__link:after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+}
+.main-menu__link:before {
+    left: 0;
+}
+.main-menu__link:after {
+    right: 0;
+}
+.main-menu__link:hover:before,
+.main-menu__link:hover:after {
+    background-color: #272727;
+    transition: background-color .3s;
 }
 @media screen and (max-width: 1024px) {
     .header {
